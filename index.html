@@ -3,373 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIZEN — The Art of Earth and Fire</title>
-    
-    <!-- Google Fonts: ラグジュアリーなセリフ体とシンプルなサンセリフ体 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
+    <title>BIZEN YAKI — The Art of Earth and Fire</title>
     <style>
-        /* --- 基本リセット & 共通スタイル --- */
+        /* --- デザインシステム & リセット --- */
         * {
+            box-shadow: border-box;
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F9F8F6; /* 温かみのある洗練された乳白色 */
-            color: #2C2A29; /* 深い墨色 */
+            background-color: #111111; /* ラグジュアリーを引き立てる静寂の黒 */
+            color: #E5E0D8;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             line-height: 1.8;
-            letter-spacing: 0.03em;
-            -webkit-font-smoothing: antialiased;
+            letter-spacing: 0.06em;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-        
-        .heading-serif {
-            font-family: 'Cormorant Garamond', serif;
+        /* 欧州・海外ハイエンド向けの美しいフォント指定 */
+        h1, h2, h3, .brand-title {
+            font-family: 'Cormorant Garamond', 'Didot', 'Bodoni MT', serif;
             font-weight: 300;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.15em;
         }
 
-        .jp-accent {
-            writing-mode: vertical-rl;
-            text-combine-upright: all;
-            font-family: "Hiragino Mincho ProN", "MS Mincho", serif;
-            color: #A39E93;
-            font-size: 0.85rem;
-            letter-spacing: 0.4em;
-            position: absolute;
-            right: 40px;
-            top: 0;
-        }
-
-        /* --- 1. ファーストビュー (Hero Section) --- */
-        .hero {
+        /* --- 1. ファーストビュー（メイン画像：main.jpg） --- */
+        .hero-section {
             height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            background-color: #EAE8E4;
-            overflow: hidden;
-        }
-        .hero-bg {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=2000'); 
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url('main.jpg');
             background-size: cover;
             background-position: center;
-            filter: brightness(0.9);
-            z-index: 1;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
+            background-attachment: fixed; /* 高級感のある視差効果 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            color: #FFFFFF;
+            padding: 0 20px;
         }
-        .hero-title {
-            font-size: 5rem;
-            margin-bottom: 15px;
-            font-weight: 300;
-        }
-        .hero-subtitle {
-            font-size: 1.1rem;
-            font-weight: 300;
-            letter-spacing: 0.2em;
+        .brand-title {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.8);
         }
-        .scroll-arrow {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #FFFFFF;
-            font-size: 1.5rem;
-            animation: bounce 2s infinite;
-            z-index: 2;
+        .brand-subtitle {
+            font-size: 1.1rem;
+            color: #A8A297;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
         }
 
-        /* --- 2. メインイントロダクション (Story) --- */
-        .story-section {
-            padding: 160px 0;
-            position: relative;
+        /* --- イントロダクション --- */
+        .intro-section {
+            padding: 120px 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
-        .story-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        .story-image {
-            width: 100%;
-            height: 600px;
-            background-image: url('https://images.unsplash.com/photo-1541256996761-85df2ea3154e?q=80&w=1200');
-            background-size: cover;
-            background-position: center;
-        }
-        .story-text h2 {
-            font-size: 2.8rem;
-            line-height: 1.2;
+        .intro-section h2 {
+            font-size: 2.2rem;
             margin-bottom: 40px;
         }
-        .story-text p {
-            font-size: 0.95rem;
-            color: #615E5B;
-            margin-bottom: 24px;
-            font-weight: 300;
+        .intro-section p {
+            font-size: 1.05rem;
+            color: #C4BEB3;
+            margin-bottom: 25px;
         }
 
-        /* --- 3. コンセプト詳細 (The 4 Pillars) --- */
-        .features-section {
-            padding: 120px 0;
-            background-color: #F2F0EC;
+        /* --- 2. 中段ストーリー画像（窯の内部：DSC02768.jpg） --- */
+        .story-image-zone {
+            height: 60vh;
+            background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('DSC02768.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* --- 三大核心要素セクション --- */
+        .core-section {
+            padding: 120px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 80px;
+            text-transform: uppercase;
         }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-        }
-        .feature-card {
-            background-color: #F9F8F6;
-            padding: 40px 30px;
-            border-radius: 2px;
-            text-align: center;
-        }
-        .feature-number {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-style: italic;
-            color: #A39E93;
-            margin-bottom: 20px;
+        .grid-container {
             display: block;
         }
-        .feature-card h3 {
-            font-size: 1.1rem;
-            letter-spacing: 0.05em;
-            margin-bottom: 15px;
-            font-weight: 500;
+        .grid-item {
+            width: 31%;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 3%;
         }
-        .feature-card p {
-            font-size: 0.85rem;
-            color: #615E5B;
-            font-weight: 300;
-            line-height: 1.7;
+        .grid-item:last-child {
+            margin-right: 0;
         }
 
-        /* --- 4. 三大核心要素 (The Core Elements) --- */
-        .details-section {
-            padding: 160px 0;
-        }
-        .details-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-        .detail-item {
-            text-align: center;
-        }
-        /* フラットでミニマルな四角形のイメージ枠に変更 */
+        /* --- 3, 4, 5. 各グリッドの画像設定 --- */
         .detail-image-box {
             width: 100%;
-            height: 350px;
-            margin-bottom: 30px;
+            height: 450px;
             background-size: cover;
             background-position: center;
-            background-color: #EAE8E4;
+            margin-bottom: 25px;
+            filter: grayscale(15%) contrast(105%); /* 重厚感を増す微細なフィルター */
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
-        .detail-item h4 {
+        .detail-image-box:hover {
+            transform: scale(1.02); /* マウスホバー時に静かにズーム */
+        }
+        
+        .item-title {
             font-size: 1.4rem;
-            letter-spacing: 0.1em;
-            margin-bottom: 5px;
-        }
-        .detail-item .sub-title {
-            font-size: 0.8rem;
-            color: #A39E93;
+            margin-bottom: 15px;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            color: #E5E0D8;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
         }
-        .detail-item p {
-            font-size: 0.85rem;
-            color: #615E5B;
-            font-weight: 300;
-            text-align: left; /* 解説文を読みやすく左寄せに */
-            padding: 0 10px;
+        .item-desc {
+            font-size: 0.95rem;
+            color: #A8A297;
+            text-align: justify;
         }
 
-        /* --- 5. フッター / 告知 --- */
+        /* --- フッター --- */
         footer {
-            padding: 120px 0 60px;
+            padding: 100px 20px;
             text-align: center;
-            border-top: 1px solid #EAE8E4;
+            border-top: 1px solid #222;
+            background-color: #0A0A0A;
         }
-        .footer-logo {
-            font-size: 2rem;
+        .footer-brand {
+            font-size: 1.8rem;
             margin-bottom: 20px;
         }
-        .coming-soon {
-            font-size: 1rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: #615E5B;
-            margin-bottom: 40px;
-        }
-        .newsletter-link {
-            font-size: 0.9rem;
-            color: #2C2A29;
+        .contact-button {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 1px solid #A8A297;
+            color: #E5E0D8;
             text-decoration: none;
-            border-bottom: 1px solid #2C2A29;
-            padding-bottom: 4px;
-            transition: opacity 0.3s;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            transition: all 0.4s;
+            margin-top: 20px;
         }
-        .newsletter-link:hover {
-            opacity: 0.6;
-        }
-        .copyright {
-            margin-top: 80px;
-            font-size: 0.75rem;
-            color: #A39E93;
+        .contact-button:hover {
+            background-color: #E5E0D8;
+            color: #111111;
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-            40% { transform: translateY(-10px) translateX(-50%); }
-            60% { transform: translateY(-5px) translateX(-50%); }
-        }
-
-        @media (max-width: 900px) {
-            .story-grid, .features-grid, .details-grid {
-                grid-template-columns: 1fr;
-                gap: 60px;
+        /* レスポンシブ（スマホ最適化） */
+        @media (max-width: 768px) {
+            .grid-item {
+                width: 100%;
+                display: block;
+                margin-right: 0;
+                margin-bottom: 60px;
             }
-            .hero-title { font-size: 3.5rem; }
-            .story-image { height: 400px; }
-            .jp-accent { display: none; }
+            .detail-image-box {
+                height: 350px;
+            }
+            .brand-title {
+                font-size: 2.5rem;
+            }
+            .story-image-zone {
+                height: 40vh;
+            }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- 1. ファーストビュー -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <h1 class="heading-serif hero-title">BIZEN</h1>
-            <p class="hero-subtitle">Earth, Fire, and 1,000 Years of Silence.</p>
-        </div>
-        <div class="scroll-arrow">↓</div>
-    </section>
+    <div class="hero-section">
+        <h1 class="brand-title">Bizen Yaki</h1>
+        <div class="brand-subtitle">The Whispering of Earth and Fire</div>
+    </div>
 
-    <!-- 2. メインイントロダクション -->
-    <section class="story-section">
-        <div class="jp-accent">千年の伝統、土と炎の芸術</div>
-        <div class="container">
-            <div class="story-grid">
-                <div class="story-image"></div>
-                <div class="story-text">
-                    <h2 class="heading-serif">Unearthing the<br>Pure Essence of Nature</h2>
-                    <p>Bizen ware is one of Japan's six ancient kilns, holding a proud history of over a thousand years. Born in the hills of Okayama, this ceramic tradition rejects all modern artifice, capturing the raw dialogue between artisan, earth, and flame.</p>
-                    <p>Every piece carries the weight of history and a quiet reverence for nature, transforming primordial elements into timeless art objects for international collectors.</p>
-                </div>
+    <div class="intro-section">
+        <h2>Unspoiled Beauty, Born from Fire</h2>
+        <p>Bizen ware is one of Japan's six ancient kilns, retaining its primitive, unglazed form for over a thousand years. With no artificial glaze or painted decorations, its final appearance is entirely shaped by the natural interactions of earth, straw, and pinewood fire inside the kiln.</p>
+        <p>Each piece possesses a unique character—a silent dialogue between the artisan's hands and nature's raw element.</p>
+    </div>
+
+    <div class="story-image-zone"></div>
+
+    <div class="core-section">
+        <h2 class="section-title">The Core Elements</h2>
+        
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="detail-image-box" style="background-image: url('artisan.jpg');"></div>
+                <h3 class="item-title">The Artisan</h3>
+                <p class="item-desc">Everything begins with the touch. The artisan shapes the clay, molding the unformed earth with patience and precise mastery, leaving behind subtle, organic textures that catch the flame.</p>
+            </div>
+
+            <div class="grid-item">
+                <div class="detail-image-box" style="background-image: url('earth.jpg');"></div>
+                <h3 class="item-title">The Earth</h3>
+                <p class="item-desc">Harvested from the deep riverbeds of Bizen, the iron-rich clay is dried and aged for years. This iron content reacts beautifully with the intense heat, creating warm, earth-toned patterns.</p>
+            </div>
+
+            <div class="grid-item">
+                <div class="detail-image-box" style="background-image: url('fire.jpg');"></div>
+                <h3 class="item-title">The Fire</h3>
+                <p class="item-desc">Fueled exclusively by red pine wood, the kiln reaches temperatures over 1200°C during a continuous two-week firing. The flying ash and changing atmosphere produce unpredictable, breathtaking surfaces.</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- 3. コンセプト詳細 (4つの柱) -->
-    <section class="features-section">
-        <div class="container">
-            <h2 class="heading-serif section-title">The Philosophy</h2>
-            <div class="features-grid">
-                
-                <!-- 柱1: 日本の伝統工芸 -->
-                <div class="feature-card">
-                    <span class="feature-number">I</span>
-                    <h3>Japanese Heritage</h3>
-                    <p>A designated traditional craft of Japan, preserving 1,000 years of unbroken lineage and aesthetic philosophy.</p>
-                </div>
-
-                <!-- 柱2: 自然由来のものしか使わない -->
-                <div class="feature-card">
-                    <span class="feature-number">II</span>
-                    <h3>Purely Organic</h3>
-                    <p>Crafted exclusively from organic elements. Zero artificial glazes, chemicals, or colorants are ever introduced.</p>
-                </div>
-
-                <!-- 柱3: すべて作家によるハンドメイド -->
-                <div class="feature-card">
-                    <span class="feature-number">III</span>
-                    <h3>Artisan Bound</h3>
-                    <p>100% hand-sculpted by master artisans. No mass production; each object is an intimate extension of the creator's hands.</p>
-                </div>
-
-                <!-- 柱4: 自然の工程の美しさ -->
-                <div class="feature-card">
-                    <span class="feature-number">IV</span>
-                    <h3>Nature's Design</h3>
-                    <p>The patterns are painted entirely by the violent flames and flying ash inside the climbing kiln over two weeks of intense firing.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. 三大核心要素 (差し替え部分) -->
-    <section class="details-section">
-        <div class="container">
-            <div class="details-grid">
-                
-                <!-- 要素1: 日本の作家 -->
-                <div class="detail-item">
-                    <div class="detail-image-box" style="background-image: url('https://images.unsplash.com/photo-1565192647048-f997ed87f5e2?q=80&w=600');"></div>
-                    <h4 class="heading-serif">The Artisan</h4>
-                    <p class="sub-title">Mastery of Hand & Soul</p>
-                    <p>Every vessel is shaped by the dedicated hands of individual Japanese master artisans. Without the aid of molds or machinery, the artisan's philosophy and life experiences are breathed directly into the clay, creating a soulful dialogue that connects the maker directly to the collector.</p>
-                </div>
-
-                <!-- 要素2: 土 -->
-                <div class="detail-item">
-                    <div class="detail-image-box" style="background-image: url('https://images.unsplash.com/photo-1595275372297-f0d34eecc7a9?q=80&w=600');"></div>
-                    <h4 class="heading-serif">The Earth</h4>
-                    <p class="sub-title">Pure Primordial Clay</p>
-                    <p>The foundation of Bizen ware lies in its unique, nutrient-rich clay harvested from the deep fields of the Bizen region. This raw earth requires years of aging and preparation. Containing high levels of iron, it reacts organically under extreme conditions, showcasing a textured aesthetic that feels entirely alive.</p>
-                </div>
-
-                <!-- 要素3: 火 -->
-                <div class="detail-item">
-                    <div class="detail-image-box" style="background-image: url('https://images.unsplash.com/photo-1545134969-8debd72a7821?q=80&w=600');"></div>
-                    <h4 class="heading-serif">The Fire</h4>
-                    <p class="sub-title">The Twelve-Day Metamorphosis</p>
-                    <p>Fired continuously for over ten days in a traditional climbing kiln using split red pine wood. Inside this furnace, temperatures exceed 1200°C. The unpredictable dance of fire and flying wood ash acts as a natural brush, painting permanent, unrepeatable landscapes across the ceramic body.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. フッター / 告知 -->
     <footer>
-        <div class="container">
-            <div class="heading-serif footer-logo">BIZEN</div>
-            <p class="coming-soon">The Global Collection — Coming Late 2026</p>
-            <p>
-                <a href="#" class="newsletter-link">Sign up for exclusive preview access</a>
-            </p>
-            <p class="copyright">&copy; 2026 BIZEN. Pre-launch Journal.</p>
-        </div>
+        <div class="brand-title footer-brand">BIZEN YAKI</div>
+        <p style="color: #A8A297; font-size: 0.9rem;">Private Exhibition & Acquisition Inquiries</p>
+        <a href="mailto:info@example.com" class="contact-button">Contact the Gallery</a>
     </footer>
 
 </body>
