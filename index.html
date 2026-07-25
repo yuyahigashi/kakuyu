@@ -1,228 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIZEN YAKI — The Art of Earth and Fire</title>
-    <style>
-        /* --- デザインシステム & リセット --- */
-        * {
-            box-shadow: border-box;
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            background-color: #111111; /* ラグジュアリーを引き立てる静寂の黒 */
-            color: #E5E0D8;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.8;
-            letter-spacing: 0.06em;
-        }
-        
-        /* 欧州・海外ハイエンド向けの美しいフォント指定 */
-        h1, h2, h3, .brand-title {
-            font-family: 'Cormorant Garamond', 'Didot', 'Bodoni MT', serif;
-            font-weight: 300;
-            letter-spacing: 0.15em;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAKUYU | Bizen Ware & Contemporary Pottery</title>
+  <style>
+    /* ベーススタイル */
+    :root {
+      --bg-dark: #0a0a0a;
+      --card-bg: #141414;
+      --text-main: #f4f4f0;
+      --text-muted: #a8a297;
+      --accent: #c49a45;
+      --border: #222222;
+      --font-serif: "Cinzel", "Times New Roman", serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
 
-        /* --- 1. ファーストビュー（メイン画像：main.jpg） --- */
-        .hero-section {
-            height: 100vh;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url('main.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* 高級感のある視差効果 */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-        .brand-title {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-        .brand-subtitle {
-            font-size: 1.1rem;
-            color: #A8A297;
-            text-transform: uppercase;
-            letter-spacing: 0.3em;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* --- イントロダクション --- */
-        .intro-section {
-            padding: 120px 20px;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .intro-section h2 {
-            font-size: 2.2rem;
-            margin-bottom: 40px;
-        }
-        .intro-section p {
-            font-size: 1.05rem;
-            color: #C4BEB3;
-            margin-bottom: 25px;
-        }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.8;
+      letter-spacing: 0.05em;
+    }
 
-        /* --- 2. 中段ストーリー画像（窯の内部：DSC02768.jpg） --- */
-        .story-image-zone {
-            height: 60vh;
-            background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('DSC02768.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-        /* --- 三大核心要素セクション --- */
-        .core-section {
-            padding: 120px 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 80px;
-            text-transform: uppercase;
-        }
-        .grid-container {
-            display: block;
-        }
-        .grid-item {
-            width: 31%;
-            display: inline-block;
-            vertical-align: top;
-            margin-right: 3%;
-        }
-        .grid-item:last-child {
-            margin-right: 0;
-        }
+    /* 共通ヘッダー・セクションタイトル */
+    .section-header {
+      text-align: center;
+      margin: 120px 0 60px;
+    }
 
-        /* --- 3, 4, 5. 各グリッドの画像設定 --- */
-        .detail-image-box {
-            width: 100%;
-            height: 450px;
-            background-size: cover;
-            background-position: center;
-            margin-bottom: 25px;
-            filter: grayscale(15%) contrast(105%); /* 重厚感を増す微細なフィルター */
-            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-        .detail-image-box:hover {
-            transform: scale(1.02); /* マウスホバー時に静かにズーム */
-        }
-        
-        .item-title {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            color: #E5E0D8;
-            border-bottom: 1px solid #333;
-            padding-bottom: 10px;
-        }
-        .item-desc {
-            font-size: 0.95rem;
-            color: #A8A297;
-            text-align: justify;
-        }
+    .section-header .subtitle {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: block;
+    }
 
-        /* --- フッター --- */
-        footer {
-            padding: 100px 20px;
-            text-align: center;
-            border-top: 1px solid #222;
-            background-color: #0A0A0A;
-        }
-        .footer-brand {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-        .contact-button {
-            display: inline-block;
-            padding: 15px 40px;
-            border: 1px solid #A8A297;
-            color: #E5E0D8;
-            text-decoration: none;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            transition: all 0.4s;
-            margin-top: 20px;
-        }
-        .contact-button:hover {
-            background-color: #E5E0D8;
-            color: #111111;
-        }
+    .section-header h2 {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+    }
 
-        /* レスポンシブ（スマホ最適化） */
-        @media (max-width: 768px) {
-            .grid-item {
-                width: 100%;
-                display: block;
-                margin-right: 0;
-                margin-bottom: 60px;
-            }
-            .detail-image-box {
-                height: 350px;
-            }
-            .brand-title {
-                font-size: 2.5rem;
-            }
-            .story-image-zone {
-                height: 40vh;
-            }
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+    /* Hero Section */
+    .hero {
+      height: 85vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(rgba(10,10,10,0.4), rgba(10,10,10,0.8)), url('DSC01833.jpg') center/cover no-repeat;
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      font-family: var(--font-serif);
+      font-size: 3.5rem;
+      font-weight: 300;
+      margin-bottom: 20px;
+      letter-spacing: 0.15em;
+    }
+
+    .hero-content p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Story & Philosophy Feature Section (土と炎) */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 120px;
+    }
+
+    @media (max-width: 768px) {
+      .story-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    .story-img-wrap {
+      overflow: hidden;
+      border-radius: 2px;
+    }
+
+    .story-img-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.8s ease;
+    }
+
+    .story-img-wrap:hover img {
+      transform: scale(1.03);
+    }
+
+    .story-text h3 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+
+    .story-text p {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      text-align: justify;
+    }
+
+    /* Artisan Spotlight Section (作家紹介) */
+    .artisan-banner {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 60px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 120px;
+    }
+
+    @media (max-width: 860px) {
+      .artisan-banner { grid-template-columns: 1fr; padding: 30px; }
+    }
+
+    .artisan-info .name {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .artisan-info .title {
+      color: var(--accent);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .artisan-info p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .artisan-img img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      filter: grayscale(20%);
+    }
+
+    /* Gallery / Collection Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+      margin-bottom: 120px;
+    }
+
+    .gallery-item {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: border-color 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      border-color: var(--accent);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+
+    .gallery-caption {
+      padding: 24px;
+    }
+
+    .gallery-caption h4 {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .gallery-caption p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 60px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="hero-section">
-        <h1 class="brand-title">Bizen Yaki</h1>
-        <div class="brand-subtitle">The Whispering of Earth and Fire</div>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>KAKUYU</h1>
+      <p>Unpainted Unglazed Ancient Crafts | The Spirit of Bizen Ware</p>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <div class="section-header">
+      <span class="subtitle">Philosophy</span>
+      <h2>Earth, Fire, & Time</h2>
     </div>
 
-    <div class="intro-section">
-        <h2>Unspoiled Beauty, Born from Fire</h2>
-        <p>Bizen ware is one of Japan's six ancient kilns, retaining its primitive, unglazed form for over a thousand years. With no artificial glaze or painted decorations, its final appearance is entirely shaped by the natural interactions of earth, straw, and pinewood fire inside the kiln.</p>
-        <p>Each piece possesses a unique character—a silent dialogue between the artisan's hands and nature's raw element.</p>
+    <div class="story-grid">
+      <div class="story-img-wrap">
+        <img src="earth.jpg" alt="Bizen Earth and Clay">
+      </div>
+      <div class="story-text">
+        <h3>Sculpted by Nature Itself</h3>
+        <p>Bizen pottery uses no artificial glazes or paints. Its distinctive reddish-brown hues and organic textures are born purely from the combination of dense rice-field clay and intense pine wood fire inside the kiln.</p>
+        <p>Over two weeks of continuous firing at temperatures exceeding 1,200°C (2,192°F), flying wood ash settles on the unglazed clay, melting naturally to form a one-of-a-kind glass glaze created entirely by nature.</p>
+      </div>
     </div>
 
-    <div class="story-image-zone"></div>
+    <div class="section-header">
+      <span class="subtitle">Craftsmanship</span>
+      <h2>Meet the Master</h2>
+    </div>
 
-    <div class="core-section">
-        <h2 class="section-title">The Core Elements</h2>
-        
-        <div class="grid-container">
-            <div class="grid-item">
-                <div class="detail-image-box" style="background-image: url('artisan.jpg');"></div>
-                <h3 class="item-title">The Artisan</h3>
-                <p class="item-desc">Everything begins with the touch. The artisan shapes the clay, molding the unformed earth with patience and precise mastery, leaving behind subtle, organic textures that catch the flame.</p>
-            </div>
+    <div class="artisan-banner">
+      <div class="artisan-info">
+        <div class="name">Takashi Baba</div>
+        <span class="title">Bizen Ceramic Artist</span>
+        <p>Born in Bizen City, Okayama Prefecture in 1983. Raised in a lineage of traditional ceramic art, Baba expands the boundaries of Bizen ware with dynamic modern forms while honoring thousand-year-old traditional kiln techniques.</p>
+        <p>By throwing pine logs directly onto the glowing ceramic pieces inside the climbing kiln (Anagama), he introduces complex, unpredictable elemental forces that give each piece a sculptural, living presence.</p>
+      </div>
+      <div class="artisan-img">
+        <img src="artisan.jpg" alt="Takashi Baba Ceramic Artist">
+      </div>
+    </div>
 
-            <div class="grid-item">
-                <div class="detail-image-box" style="background-image: url('earth.jpg');"></div>
-                <h3 class="item-title">The Earth</h3>
-                <p class="item-desc">Harvested from the deep riverbeds of Bizen, the iron-rich clay is dried and aged for years. This iron content reacts beautifully with the intense heat, creating warm, earth-toned patterns.</p>
-            </div>
+    <div class="section-header">
+      <span class="subtitle">Works</span>
+      <h2>Selected Creations</h2>
+    </div>
 
-            <div class="grid-item">
-                <div class="detail-image-box" style="background-image: url('fire.jpg');"></div>
-                <h3 class="item-title">The Fire</h3>
-                <p class="item-desc">Fueled exclusively by red pine wood, the kiln reaches temperatures over 1200°C during a continuous two-week firing. The flying ash and changing atmosphere produce unpredictable, breathtaking surfaces.</p>
-            </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="5.jpg" alt="Bizen Flower Vase">
+        <div class="gallery-caption">
+          <h4>Flame-Burned Vase</h4>
+          <p>Natural ash glaze (Goma) effect captured on a structured dark clay body.</p>
         </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="7.jpg" alt="Bizen Tea Vessel">
+        <div class="gallery-caption">
+          <h4>Earth-Toned Vessel</h4>
+          <p>Subtle reddish gradient (Hidasuki) achieved through straw wrap firing.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="8.jpg" alt="Sculptural Bizen Piece">
+        <div class="gallery-caption">
+          <h4>Modern Form V</h4>
+          <p>Contemporary geometric silhouette fused with raw tactile clay surface.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="DSC02064.jpg" alt="Kiln Process Detail">
+        <div class="gallery-caption">
+          <h4>Anagama Kiln Markings</h4>
+          <p>Deep charcoal tones created by direct contact with burning red pine charcoal.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="DSC02235.jpg" alt="Bizen Ware Detail">
+        <div class="gallery-caption">
+          <h4>Textured Pitcher</h4>
+          <p>Formed with ancient rice-paddy clay rich in iron and natural minerals.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="DSC02500.jpg" alt="Bizen Studio Piece">
+        <div class="gallery-caption">
+          <h4>Sculptured Object</h4>
+          <p>A harmonious balance between traditional heritage and modern interior design.</p>
+        </div>
+      </div>
     </div>
 
-    <footer>
-        <div class="brand-title footer-brand">BIZEN YAKI</div>
-    </footer>
+    <div class="story-grid" style="margin-top: 100px;">
+      <div class="story-text">
+        <h3>The Anagama Kiln Fire</h3>
+        <p>The firing of Bizen ware is a relentless struggle and dialog with fire. Burning red pine wood day and night for over 10 days requires absolute concentration and physical dedication.</p>
+        <p>No two pieces are ever identical. Every subtle shift in wind, humidity, and flame path creates a unique masterpiece that tells the story of the moment it was forged.</p>
+      </div>
+      <div class="story-img-wrap">
+        <img src="DSC02559.jpg" alt="Fire and Kiln Process">
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; KAKUYU. All rights reserved. Expressing the Art of Japanese Bizen Pottery to the World.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
