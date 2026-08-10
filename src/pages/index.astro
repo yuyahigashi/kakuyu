@@ -5,7 +5,7 @@ import StoryCard from '../components/StoryCard.astro';
 const stories = (await getCollection('stories', ({ data }) => !data.draft && data.language === 'ja')).sort((a,b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
 const lead = stories.find(({ data }) => data.featured) ?? stories[0];
 const latest = stories.filter(({ id }) => id !== lead?.id).slice(0, 6);
-const themes = ['War 戦争','Poverty 貧困','Solitude 孤独','Violence 暴力','Art 芸術','Craft 工芸','Memory 記憶','Place 場所','Work 仕事'];
+const themes = ['War 戦争','Poverty 貧困','Solitude 孤独','Art 芸術','Craft 工芸','Memory 記憶','Place 場所','Work 仕事'];
 ---
 <BaseLayout>
   <div class="issue-line"><span>Vol. 01 / Summer 2026</span><span>Tokyo, Japan</span></div>
