@@ -1,0 +1,18 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+export async function getStaticPaths() {
+  const stories = await getCollection('stories', ({ data }) => !data.draft);
+  return stories.map((story) => ({ params: { id: story.id }, props: { story } }));
+}
+const { story } = Astro.props;
+const { Content } = await render(story);
+const date = new Intl.DateTimeFormat('ja-JP', { year:'numeric', month:'long', day:'numeric' }).format(story.data.publishedAt);
+---
+<BaseLayout title={story.data.title} description={story.data.dek}>
+  <article class="article-page">
+    <header><p class="kicker">{story.data.section} / {story.data.themes.join('・')}</p><h1>{story.data.title}</h1><p class="dek">{story.data.dek}</p><p class="byline">文 {story.data.author} <span>{date}</span></p></header>
+    {story.data.image ? <figure><img src={story.data.image} alt={story.data.imageAlt ?? ''} /><figcaption>{story.data.imageCredit}</figcaption></figure> : <div class="article-placeholder" aria-hidden="true"></div>}
+    <div class="prose"><Content /></div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,11 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StoryCard from '../../components/StoryCard.astro';
+export function getStaticPaths() {
+  return ['Japan','World','Arts','Notebook'].map(section => ({ params: { section: section.toLowerCase() }, props: { section } }));
+}
+const { section } = Astro.props;
+const stories = (await getCollection('stories', ({ data }) => !data.draft && data.section === section)).sort((a,b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+---
+<BaseLayout title={section}><section class="archive-page"><p class="kicker">Section</p><h1>{section}</h1><div class="story-grid">{stories.map((story,index) => <StoryCard story={story} index={index} />)}</div></section></BaseLayout>

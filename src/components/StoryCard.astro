@@ -1,0 +1,13 @@
+---
+const { story, index = 0 } = Astro.props;
+const { title, dek, author, section, publishedAt, image, imageAlt } = story.data;
+const date = new Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' }).format(publishedAt);
+---
+<article class="story-card">
+  <a class:list={['story-image', `tone-${index % 4}`]} href={`/stories/${story.id}/`}>
+    {image ? <img src={image} alt={imageAlt ?? ''} loading="lazy" /> : <span>{String(index + 1).padStart(2, '0')}</span>}
+  </a>
+  <p class="kicker">{section}</p>
+  <h3><a href={`/stories/${story.id}/`}>{title}</a></h3>
+  <p>{dek}</p><small>{author} · {date}</small>
+</article>

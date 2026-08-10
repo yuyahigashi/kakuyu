@@ -1,0 +1,37 @@
+media:
+  input: public/images
+  output: /images
+
+content:
+  - name: stories
+    label: 記事
+    type: collection
+    path: src/content/stories
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, publishedAt, section, draft]
+      sort: [publishedAt, title]
+      default:
+        sort: publishedAt
+        order: desc
+    fields:
+      - { name: title, label: タイトル, type: string }
+      - { name: dek, label: リード文, type: text }
+      - { name: author, label: 著者, type: string }
+      - { name: publishedAt, label: 公開日, type: date }
+      - name: section
+        label: セクション
+        type: select
+        options: [Stories, Japan, World, Arts, Notebook]
+      - { name: themes, label: テーマ, type: string, list: true }
+      - { name: featured, label: トップ記事, type: boolean, default: false }
+      - { name: draft, label: 下書き, type: boolean, default: true }
+      - { name: image, label: メイン画像, type: image, required: false }
+      - { name: imageAlt, label: 画像の説明, type: string, required: false }
+      - { name: imageCredit, label: 写真クレジット, type: string, required: false }
+      - name: language
+        label: 言語
+        type: select
+        options: [ja, en]
+        default: ja
+      - { name: body, label: 本文, type: rich-text }
