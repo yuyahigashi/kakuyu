@@ -7,7 +7,6 @@ section: Japan
 themes: [Bizen City, Okayama, Bizen ware, Emperor Horikawa]
 image: /images/stories/bizen-city-horikawa-emperor/horikawa-emperor-original.jpg
 imageAlt: Portrait of Emperor Horikawa
-imageCredit: "Miyake Kōtarō, Rekidai Son'ei (1894), via Wikimedia Commons — Public Domain"
 featured: false
 draft: false
 language: en
