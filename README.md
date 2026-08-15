@@ -19,6 +19,13 @@ npm run dev
 
 保存するとMarkdownファイルが `src/content/stories` に追加されます。Cloudflare PagesをGitHubへ接続していれば、自動的に再ビルド・公開されます。
 
+### 新規投稿の基本ルール
+
+- 公開済み記事は `publishedAt` の新しい順に並べる。
+- 各言語の最新記事をトップページの大型記事枠に表示する。
+- 最新記事は大型記事枠だけでなく、同じページの「Latest Stories」の先頭にも表示する。
+- 英語記事は英語トップ `/`、日本語記事は日本語トップ `/ja/` に反映する。
+
 ## Cloudflare Pages設定
 
 - Framework preset: Astro

@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import StoryCard from '../../components/StoryCard.astro';
 const stories = (await getCollection('stories', ({ data }) => !data.draft && data.language === 'ja')).sort((a,b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
 const lead = stories[0];
-const latest = stories.filter(({ id }) => id !== lead?.id).slice(0, 6);
+const latest = stories.slice(0, 6);
 const themes = ['戦争','貧困','孤独','芸術','工芸','記憶','場所','仕事'];
 ---
 <BaseLayout language="ja" description="日本をレンズに、人間の条件を考える独立系メディア。">
