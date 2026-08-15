@@ -1,7 +1,7 @@
 ---
-const { story, index = 0 } = Astro.props;
+const { story, index = 0, language = 'en' } = Astro.props;
 const { title, dek, author, section, publishedAt, image, imageAlt } = story.data;
-const date = new Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' }).format(publishedAt);
+const date = new Intl.DateTimeFormat(language === 'ja' ? 'ja-JP' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' }).format(publishedAt);
 ---
 <article class="story-card">
   <a class:list={['story-image', `tone-${index % 4}`]} href={`/stories/${story.id}/`}>

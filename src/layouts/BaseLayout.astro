@@ -1,11 +1,12 @@
 ---
 import '../styles/global.css';
-interface Props { title?: string; description?: string; }
-const { title = 'KAKUYU', description = '日本をレンズに、人間の条件を考える独立系メディア。' } = Astro.props;
+interface Props { title?: string; description?: string; language?: 'ja' | 'en'; }
+const { title = 'KAKUYU', description = 'An independent review looking at the world through Japan.', language = 'en' } = Astro.props;
 const pageTitle = title === 'KAKUYU' ? 'KAKUYU — Independent Review from Japan' : `${title} — KAKUYU`;
+const isJapanese = language === 'ja';
 ---
 <!doctype html>
-<html lang="ja">
+<html lang={language}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -15,15 +16,15 @@ const pageTitle = title === 'KAKUYU' ? 'KAKUYU — Independent Review from Japan
   </head>
   <body>
     <header class="site-header">
-      <div class="utility"><span>Independent review from Japan</span><div><a href="#newsletter">Newsletter</a><a href="/en/" lang="en">English</a></div></div>
-      <a class="masthead" href="/">KAKUYU</a>
-      <nav aria-label="主要ナビゲーション">
+      <div class="utility"><span>Independent review from Japan</span><div><a href="#newsletter">Newsletter</a><a href={isJapanese ? '/' : '/ja/'} lang={isJapanese ? 'en' : 'ja'}>{isJapanese ? 'English' : '日本語'}</a></div></div>
+      <a class="masthead" href={isJapanese ? '/ja/' : '/'}>KAKUYU</a>
+      <nav aria-label={isJapanese ? '主要ナビゲーション' : 'Primary navigation'}>
         <a href="/#stories">Stories</a><a href="/section/japan/">Japan</a><a href="/section/world/">World</a><a href="/section/arts/">Arts</a><a href="/section/notebook/">Notebook</a><a href="/#themes">Themes</a>
       </nav>
     </header>
     <main><slot /></main>
     <footer>
-      <div><strong>KAKUYU</strong><p>日本をレンズに、戦争、貧困、孤独、芸術、工芸、記憶、場所、仕事、そして人間の条件を語る。</p></div>
+      <div><strong>KAKUYU</strong><p>{isJapanese ? '日本をレンズに、戦争、貧困、孤独、芸術、工芸、記憶、場所、仕事、そして人間の条件を語る。' : 'Looking through Japan at war, poverty, solitude, art, craft, memory, place, work, and the human condition.'}</p></div>
       <div class="footer-links"><a href="/about/">About</a><a href="mailto:editor@example.com">Contact</a><a href="#newsletter">Newsletter</a></div>
       <small>© {new Date().getFullYear()} KAKUYU</small>
     </footer>

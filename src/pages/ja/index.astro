@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StoryCard from '../../components/StoryCard.astro';
+const stories = (await getCollection('stories', ({ data }) => !data.draft && data.language === 'ja')).sort((a,b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+const lead = stories[0];
+const latest = stories.filter(({ id }) => id !== lead?.id).slice(0, 6);
+const themes = ['戦争','貧困','孤独','芸術','工芸','記憶','場所','仕事'];
+---
+<BaseLayout language="ja" description="日本をレンズに、人間の条件を考える独立系メディア。">
+  <div class="issue-line"><span>Vol. 01 / Summer 2026</span><span>Tokyo, Japan</span></div>
+  {lead && <section class="lead" id="stories">
+    <a class="lead-image" href={`/stories/${lead.id}/`}>{lead.data.image ? <img src={lead.data.image} alt={lead.data.imageAlt ?? ''} /> : <span>Essay / Memory</span>}</a>
+    <article><p class="kicker">{lead.data.section} / {lead.data.themes.join('・')}</p><h1><a href={`/stories/${lead.id}/`}>{lead.data.title}</a></h1><p class="dek">{lead.data.dek}</p><p class="byline">文 {lead.data.author}</p><a class="read-more" href={`/stories/${lead.id}/`}>記事を読む <span>→</span></a></article>
+  </section>}
+  <section class="manifesto"><p>Rural Japan—<br />a new vantage point.</p><p>ひとつの土地をレンズにすることで、世界を見るための別の視点を届けます。</p></section>
+  <section class="latest" id="latest"><header class="section-head"><h2>Latest Stories</h2><span>新着</span></header><div class="story-grid">{latest.map((story, index) => <StoryCard story={story} index={index} language="ja" />)}</div></section>
+  <section class="themes" id="themes"><header class="section-head"><h2>Themes</h2><span>私たちが追うもの</span></header><div class="theme-grid">{themes.map((theme,index) => <a href={`/themes/${encodeURIComponent(theme)}/`}><span>{String(index + 1).padStart(2,'0')}</span>{theme}</a>)}</div></section>
+  <section class="newsletter" id="newsletter"><p class="kicker">Letters from KAKUYU</p><h2>読むための静かな時間を、<br />受信箱へ。</h2><form action="#newsletter" method="post"><label><span class="sr-only">メールアドレス</span><input type="email" name="email" placeholder="you@example.com" required /></label><button type="submit">Subscribe</button></form><small>月に1–2回。いつでも解除できます。</small></section>
+</BaseLayout>

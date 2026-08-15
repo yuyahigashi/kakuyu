@@ -2,19 +2,19 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StoryCard from '../components/StoryCard.astro';
-const stories = (await getCollection('stories', ({ data }) => !data.draft)).sort((a,b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
-const lead = stories.find(({ data }) => data.featured) ?? stories[0];
+const stories = (await getCollection('stories', ({ data }) => !data.draft && data.language === 'en')).sort((a,b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+const lead = stories[0];
 const latest = stories.filter(({ id }) => id !== lead?.id).slice(0, 6);
-const themes = ['War 戦争','Poverty 貧困','Solitude 孤独','Art 芸術','Craft 工芸','Memory 記憶','Place 場所','Work 仕事'];
+const themes = ['War','Poverty','Solitude','Art','Craft','Memory','Place','Work'];
 ---
-<BaseLayout>
+<BaseLayout language="en">
   <div class="issue-line"><span>Vol. 01 / Summer 2026</span><span>Tokyo, Japan</span></div>
   {lead && <section class="lead" id="stories">
     <a class="lead-image" href={`/stories/${lead.id}/`}>{lead.data.image ? <img src={lead.data.image} alt={lead.data.imageAlt ?? ''} /> : <span>Essay / Memory</span>}</a>
-    <article><p class="kicker">{lead.data.section} / {lead.data.themes.join('・')}</p><h1><a href={`/stories/${lead.id}/`}>{lead.data.title}</a></h1><p class="dek">{lead.data.dek}</p><p class="byline">文 {lead.data.author}</p><a class="read-more" href={`/stories/${lead.id}/`}>記事を読む <span>→</span></a></article>
+    <article><p class="kicker">{lead.data.section} / {lead.data.themes.join(' · ')}</p><h1><a href={`/stories/${lead.id}/`}>{lead.data.title}</a></h1><p class="dek">{lead.data.dek}</p><p class="byline">By {lead.data.author}</p><a class="read-more" href={`/stories/${lead.id}/`}>Read the story <span>→</span></a></article>
   </section>}
   <section class="manifesto"><p>Rural Japan—<br />a new vantage point.</p><p>By looking through the lens of a single place, we offer you a different way of seeing the world.</p></section>
-  <section class="latest" id="latest"><header class="section-head"><h2>Latest Stories</h2><span>新着</span></header><div class="story-grid">{latest.map((story, index) => <StoryCard story={story} index={index} />)}</div></section>
-  <section class="themes" id="themes"><header class="section-head"><h2>Themes</h2><span>私たちが追うもの</span></header><div class="theme-grid">{themes.map((theme,index) => <a href={`/themes/${encodeURIComponent(theme.split(' ')[1])}/`}><span>{String(index + 1).padStart(2,'0')}</span>{theme}</a>)}</div></section>
-  <section class="newsletter" id="newsletter"><p class="kicker">Letters from KAKUYU</p><h2>読むための静かな時間を、<br />受信箱へ。</h2><form action="#newsletter" method="post"><label><span class="sr-only">メールアドレス</span><input type="email" name="email" placeholder="you@example.com" required /></label><button type="submit">Subscribe</button></form><small>月に1–2回。いつでも解除できます。</small></section>
+  <section class="latest" id="latest"><header class="section-head"><h2>Latest Stories</h2><span>New writing</span></header><div class="story-grid">{latest.map((story, index) => <StoryCard story={story} index={index} language="en" />)}</div></section>
+  <section class="themes" id="themes"><header class="section-head"><h2>Themes</h2><span>What we follow</span></header><div class="theme-grid">{themes.map((theme,index) => <a href={`/themes/${encodeURIComponent(theme)}/`}><span>{String(index + 1).padStart(2,'0')}</span>{theme}</a>)}</div></section>
+  <section class="newsletter" id="newsletter"><p class="kicker">Letters from KAKUYU</p><h2>A quiet moment for reading,<br />delivered to your inbox.</h2><form action="#newsletter" method="post"><label><span class="sr-only">Email address</span><input type="email" name="email" placeholder="you@example.com" required /></label><button type="submit">Subscribe</button></form><small>One or two emails a month. Unsubscribe at any time.</small></section>
 </BaseLayout>
