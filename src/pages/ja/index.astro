@@ -8,7 +8,7 @@ const latest = stories.slice(0, 6);
 const themes = ['戦争','貧困','孤独','芸術','工芸','記憶','場所','仕事'];
 ---
 <BaseLayout language="ja" description="日本をレンズに、人間の条件を考える独立系メディア。">
-  <div class="issue-line"><span>Vol. 01 / Summer 2026</span><span>Tokyo, Japan</span></div>
+  <div class="issue-line"><span>Vol. 01 / Summer 2026</span><span>Rural Japan</span></div>
   {lead && <section class="lead" id="stories">
     <a class="lead-image" href={`/stories/${lead.id}/`}>{lead.data.image ? <img src={lead.data.image} alt={lead.data.imageAlt ?? ''} /> : <span>Essay / Memory</span>}</a>
     <article><p class="kicker">{lead.data.section} / {lead.data.themes.join('・')}</p><h1><a href={`/stories/${lead.id}/`}>{lead.data.title}</a></h1><p class="dek">{lead.data.dek}</p><p class="byline">文 {lead.data.author}</p><a class="read-more" href={`/stories/${lead.id}/`}>記事を読む <span>→</span></a></article>
