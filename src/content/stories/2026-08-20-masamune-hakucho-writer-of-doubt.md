@@ -8,9 +8,9 @@ themes: [Literature, Naturalism, Bizen, Solitude]
 featured: false
 draft: false
 language: en
-image: /images/stories/masamune-hakucho/masamune-hakucho-birthplace.jpg
-imageAlt: The site of Masamune Hakuchō's birthplace in Honami, Bizen
-imageCredit: Photo by Reggaeman, Wikimedia Commons, CC BY-SA 3.0
+image: /images/stories/masamune-hakucho/masamune-hakucho-1925.jpg
+imageAlt: Portrait of Masamune Hakuchō published in 1925
+imageCredit: Photographer unknown, National Diet Library via Wikimedia Commons, public domain
 ---
 
 Masamune Hakuchō was one of the foremost writers of Japanese Naturalism. Beyond his fiction, he was highly regarded as a literary critic of unusual sharpness and independence. Any account of modern Japanese literature from the Meiji through the Shōwa periods would be incomplete without him.
