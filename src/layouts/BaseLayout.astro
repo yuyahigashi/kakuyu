@@ -1,9 +1,12 @@
 ---
 import '../styles/global.css';
-interface Props { title?: string; description?: string; language?: 'ja' | 'en'; alternateHref?: string; }
-const { title = 'KAKUYU', description = 'An independent review looking at the world through Japan.', language = 'en', alternateHref } = Astro.props;
+interface Props { title?: string; description?: string; language?: 'ja' | 'en'; alternateHref?: string; image?: string; type?: 'website' | 'article'; }
+const { title = 'KAKUYU', description = 'An independent review looking at the world through Japan.', language = 'en', alternateHref, image, type = 'website' } = Astro.props;
 const pageTitle = title === 'KAKUYU' ? 'KAKUYU — Independent Review from Japan' : `${title} — KAKUYU`;
 const isJapanese = language === 'ja';
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const alternateURL = alternateHref ? new URL(alternateHref, Astro.site) : undefined;
+const socialImage = image ? new URL(image, Astro.site) : undefined;
 ---
 <!doctype html>
 <html lang={language}>
@@ -12,6 +15,20 @@ const isJapanese = language === 'ja';
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#ffffff" />
+    <link rel="canonical" href={canonicalURL} />
+    {alternateURL && <link rel="alternate" hreflang={isJapanese ? 'en' : 'ja'} href={alternateURL} />}
+    {alternateURL && <link rel="alternate" hreflang={language} href={canonicalURL} />}
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="KAKUYU" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content={isJapanese ? 'ja_JP' : 'en_US'} />
+    {socialImage && <meta property="og:image" content={socialImage} />}
+    <meta name="twitter:card" content={socialImage ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    {socialImage && <meta name="twitter:image" content={socialImage} />}
     <title>{pageTitle}</title>
   </head>
   <body>

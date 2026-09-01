@@ -16,7 +16,7 @@ const alternateId = story.id.endsWith('-en')
 const alternateHref = alternateId ? `/stories/${alternateId}/` : undefined;
 const date = new Intl.DateTimeFormat(isJapanese ? 'ja-JP' : 'en-US', { year:'numeric', month:'long', day:'numeric' }).format(story.data.publishedAt);
 ---
-<BaseLayout title={story.data.title} description={story.data.dek} language={story.data.language} alternateHref={alternateHref}>
+<BaseLayout title={story.data.title} description={story.data.dek} language={story.data.language} alternateHref={alternateHref} image={story.data.image} type="article">
   <article class="article-page">
     <header><p class="kicker">{story.data.section} / {story.data.themes.join(isJapanese ? '・' : ' · ')}</p><h1>{story.data.title}</h1><p class="dek">{story.data.dek}</p><p class="byline">{isJapanese ? '文' : 'By'} {story.data.author} <span>{date}</span></p></header>
     {story.data.image ? <figure><img src={story.data.image} alt={story.data.imageAlt ?? ''} /><figcaption>{story.data.imageCredit}</figcaption></figure> : <div class="article-placeholder" aria-hidden="true"></div>}

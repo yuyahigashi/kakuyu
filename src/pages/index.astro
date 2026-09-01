@@ -7,7 +7,7 @@ const lead = stories[0];
 const latest = stories.slice(0, 6);
 const themes = ['War','Poverty','Solitude','Art','Craft','Memory','Place','Work'];
 ---
-<BaseLayout language="en">
+<BaseLayout language="en" alternateHref="/ja/" image={lead?.data.image}>
   <div class="issue-line"><span>Vol. 01 / Summer 2026</span><span>Rural Japan</span></div>
   {lead && <section class="lead" id="stories">
     <a class="lead-image" href={`/stories/${lead.id}/`}>{lead.data.image ? <img src={lead.data.image} alt={lead.data.imageAlt ?? ''} /> : <span>Essay / Memory</span>}</a>

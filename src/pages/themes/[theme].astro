@@ -2,10 +2,13 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import StoryCard from '../../components/StoryCard.astro';
-export function getStaticPaths() {
-  return ['戦争','貧困','孤独','芸術','工芸','記憶','場所','仕事'].map(theme => ({ params: { theme }, props: { theme } }));
+export async function getStaticPaths() {
+  const stories = await getCollection('stories', ({ data }) => !data.draft);
+  const themes = [...new Set(stories.flatMap((story) => story.data.themes))];
+  return themes.map(theme => ({ params: { theme }, props: { theme } }));
 }
 const { theme } = Astro.props;
 const stories = (await getCollection('stories', ({ data }) => !data.draft && data.themes.includes(theme))).sort((a,b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+const language = stories[0]?.data.language ?? 'en';
 ---
-<BaseLayout title={theme}><section class="archive-page"><p class="kicker">Theme</p><h1>{theme}</h1><div class="story-grid">{stories.map((story,index) => <StoryCard story={story} index={index} />)}</div></section></BaseLayout>
+<BaseLayout title={theme} language={language}><section class="archive-page"><p class="kicker">Theme</p><h1>{theme}</h1><div class="story-grid">{stories.map((story,index) => <StoryCard story={story} index={index} language={story.data.language} />)}</div></section></BaseLayout>
