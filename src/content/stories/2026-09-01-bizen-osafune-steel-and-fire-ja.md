@@ -8,8 +8,8 @@ themes: [備前長船, 日本刀, 工芸, 火]
 featured: false
 draft: false
 language: ja
-image: /images/stories/bizen-osafune/swordsmith-at-forge.png
-imageAlt: 長船の鍛冶場で炉に向かう刀匠
+image: /images/stories/bizen-osafune/hand-polishing.png
+imageAlt: 日本刀の刀身を手作業で研磨する職人
 imageCredit: 画像提供：筆者
 ---
 
@@ -52,11 +52,6 @@ imageCredit: 画像提供：筆者
 日本刀づくりは、鍛造だけで完結するものではない。刀身の形が整えられ、焼き入れが終わると、専門の研師が手仕事によって地鉄や刃、刃文を研ぎ出していく。
 
 <figure>
-  <img src="/images/stories/bizen-osafune/hand-polishing.png" alt="日本刀の刀身を手作業で研磨する職人" loading="lazy" />
-  <figcaption>手作業による刀身の研磨。画像提供：筆者</figcaption>
-</figure>
-
-<figure>
   <img src="/images/stories/bizen-osafune/blade-closeup.png" alt="研磨中の日本刀の刀身" loading="lazy" />
   <figcaption>研磨される刀身。画像提供：筆者</figcaption>
 </figure>
@@ -81,4 +76,3 @@ imageCredit: 画像提供：筆者
 - [瀬戸内市「長船町の沿革」](https://www.city.setouchi.lg.jp/soshiki/91/3851.html)
 - [瀬戸内市「歴史文化の特徴」](https://www.city.setouchi.lg.jp/uploaded/attachment/115589.pdf)
 - [刀剣博物館「作刀工程と研磨」](https://www.touken.or.jp/museum/sword/step.html)
-

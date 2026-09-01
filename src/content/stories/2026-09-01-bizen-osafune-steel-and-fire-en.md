@@ -8,8 +8,8 @@ themes: [Bizen Osafune, Japanese Swords, Craft, Fire]
 featured: false
 draft: false
 language: en
-image: /images/stories/bizen-osafune/swordsmith-at-forge.png
-imageAlt: A swordsmith tending the forge in Osafune
+image: /images/stories/bizen-osafune/hand-polishing.png
+imageAlt: A craftsman polishing a Japanese sword blade by hand
 imageCredit: Image supplied by the author.
 ---
 
@@ -52,11 +52,6 @@ A Japanese sword is not made by melting steel and pouring it into a mold. In the
 Forging is only one part of the making of a Japanese sword. Once the blade has been formed and hardened, a specialist polisher works by hand to bring out its surface, edge, and temper pattern.
 
 <figure>
-  <img src="/images/stories/bizen-osafune/hand-polishing.png" alt="A craftsman polishing a Japanese sword blade by hand" loading="lazy" />
-  <figcaption>Polishing a blade by hand. Image supplied by the author.</figcaption>
-</figure>
-
-<figure>
   <img src="/images/stories/bizen-osafune/blade-closeup.png" alt="Close view of a Japanese sword blade during polishing" loading="lazy" />
   <figcaption>The blade during polishing. Image supplied by the author.</figcaption>
 </figure>
@@ -81,4 +76,3 @@ The land of Bizen possesses a rich tradition of making. Anyone visiting Bizen Ci
 - [Setouchi City: History of Osafune](https://www.city.setouchi.lg.jp/soshiki/91/3851.html)
 - [Setouchi City: Historical and Cultural Features](https://www.city.setouchi.lg.jp/uploaded/attachment/115589.pdf)
 - [Japanese Sword Museum: The Sword-making and Polishing Process](https://www.touken.or.jp/museum/sword/step.html)
-
