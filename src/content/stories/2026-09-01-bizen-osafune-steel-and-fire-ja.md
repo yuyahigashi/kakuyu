@@ -8,8 +8,8 @@ themes: [備前長船, 日本刀, 工芸, 火]
 featured: false
 draft: false
 language: ja
-image: /images/stories/bizen-osafune/hand-polishing.png
-imageAlt: 日本刀の刀身を手作業で研磨する職人
+image: /images/stories/bizen-osafune/swordsmith-at-forge.png
+imageAlt: 長船の鍛冶場で炉に向かう刀匠
 imageCredit: 画像提供：筆者
 ---
 
@@ -50,6 +50,11 @@ imageCredit: 画像提供：筆者
 日本刀は、鋼を溶かして型に流し込むことで作られるのではない。一般的な製法では、玉鋼を熱して鍛接し、何度も折り返して鍛錬する。この工程によって炭素量を調整し、不純物を取り除きながら、強靱な鋼へと仕上げていく。かつての人々は、長い経験の積み重ねによって、今日から見ても科学的な製法を築き上げていったのである。
 
 日本刀づくりは、鍛造だけで完結するものではない。刀身の形が整えられ、焼き入れが終わると、専門の研師が手仕事によって地鉄や刃、刃文を研ぎ出していく。
+
+<figure>
+  <img src="/images/stories/bizen-osafune/hand-polishing.png" alt="日本刀の刀身を手作業で研磨する職人" loading="lazy" />
+  <figcaption>手作業による刀身の研磨。画像提供：筆者</figcaption>
+</figure>
 
 <figure>
   <img src="/images/stories/bizen-osafune/blade-closeup.png" alt="研磨中の日本刀の刀身" loading="lazy" />

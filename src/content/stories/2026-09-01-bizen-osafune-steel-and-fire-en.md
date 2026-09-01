@@ -8,8 +8,8 @@ themes: [Bizen Osafune, Japanese Swords, Craft, Fire]
 featured: false
 draft: false
 language: en
-image: /images/stories/bizen-osafune/hand-polishing.png
-imageAlt: A craftsman polishing a Japanese sword blade by hand
+image: /images/stories/bizen-osafune/swordsmith-at-forge.png
+imageAlt: A swordsmith tending the forge in Osafune
 imageCredit: Image supplied by the author.
 ---
 
@@ -50,6 +50,11 @@ I also learned that this craft is not sustained by intuition alone. It demands a
 A Japanese sword is not made by melting steel and pouring it into a mold. In the general method, pieces of *tamahagane* steel are heated, forge-welded, and repeatedly folded and hammered. This process helps regulate carbon content and remove impurities, gradually producing a strong and resilient material. Through accumulated experience, earlier craftspeople established a method that remains scientifically sophisticated even when viewed from the present.
 
 Forging is only one part of the making of a Japanese sword. Once the blade has been formed and hardened, a specialist polisher works by hand to bring out its surface, edge, and temper pattern.
+
+<figure>
+  <img src="/images/stories/bizen-osafune/hand-polishing.png" alt="A craftsman polishing a Japanese sword blade by hand" loading="lazy" />
+  <figcaption>Polishing a blade by hand. Image supplied by the author.</figcaption>
+</figure>
 
 <figure>
   <img src="/images/stories/bizen-osafune/blade-closeup.png" alt="Close view of a Japanese sword blade during polishing" loading="lazy" />
