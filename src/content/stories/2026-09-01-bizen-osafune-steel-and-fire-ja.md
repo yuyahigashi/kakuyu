@@ -17,6 +17,11 @@ imageCredit: 画像提供：筆者
 
 これは、日本を代表する作家のひとりである森鷗外の「阿部一族」の一文である。
 
+<figure>
+  <img src="/images/stories/bizen-osafune/mori-ogai.jpg" alt="軍服姿の森鷗外" loading="lazy" style="aspect-ratio:auto;object-fit:contain;max-height:680px" />
+  <figcaption>森鷗外、1899年6月、大橋乙羽撮影。<a href="https://commons.wikimedia.org/wiki/File:Mori_Ogai_(cropped).jpg">Wikimedia Commons</a>、パブリックドメイン。</figcaption>
+</figure>
+
 岡山の地に触れると、「備前」という名がいかに歴史的な重みをもつかがわかる。現在の岡山県は、中世には主として備前国、備中国、美作国に分かれていた。そのうち、岡山市や備前市、現在の瀬戸内市長船町を含む県南東部は、備前国に属していた。
 
 つまり備前長船とは、備前国長船という土地の名を背負った刀なのだ。ここで「秘蔵」と書かれているように、備前長船の刀は名刀として高い評価を受けてきた。長船の刀工たちは、刀の茎に居住地として「備前国長船住」などの銘を刻んだ。

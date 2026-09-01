@@ -17,6 +17,11 @@ imageCredit: Image supplied by the author.
 
 This is a passage from “The Abe Family,” by Mori Ōgai, one of Japan’s foremost modern writers.
 
+<figure>
+  <img src="/images/stories/bizen-osafune/mori-ogai.jpg" alt="Portrait of Mori Ōgai in military uniform" loading="lazy" style="aspect-ratio:auto;object-fit:contain;max-height:680px" />
+  <figcaption>Mori Ōgai, June 1899. Photograph by Ōhashi Otowa. <a href="https://commons.wikimedia.org/wiki/File:Mori_Ogai_(cropped).jpg">Wikimedia Commons</a>, public domain.</figcaption>
+</figure>
+
 To encounter the land of Okayama is to understand the historical weight carried by the name Bizen. In the medieval period, what is now Okayama Prefecture was divided principally among the provinces of Bizen, Bitchū, and Mimasaka. The southeastern part of the prefecture—including present-day Okayama City, Bizen City, and Osafune in Setouchi City—belonged to Bizen Province.
 
 The name Bizen Osafune therefore bears the name of a specific place: Osafune in Bizen Province. As Ōgai’s use of the word “treasured” suggests, swords made there enjoyed a distinguished reputation. Many Osafune swordsmiths inscribed their place of residence on the tang of a blade as “resident of Osafune, Bizen Province.”
