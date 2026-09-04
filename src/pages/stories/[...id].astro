@@ -17,9 +17,9 @@ const alternateHref = alternateId ? `/stories/${alternateId}/` : undefined;
 const date = new Intl.DateTimeFormat(isJapanese ? 'ja-JP' : 'en-US', { year:'numeric', month:'long', day:'numeric' }).format(story.data.publishedAt);
 ---
 <BaseLayout title={story.data.title} description={story.data.dek} language={story.data.language} alternateHref={alternateHref} image={story.data.image} type="article">
-  <article class="article-page">
+  <article class:list={['article-page', { 'article-page--feature': story.data.layout === 'feature' }]}>
     <header><p class="kicker">{story.data.section} / {story.data.themes.join(isJapanese ? '・' : ' · ')}</p><h1>{story.data.title}</h1><p class="dek">{story.data.dek}</p><p class="byline">{isJapanese ? '文' : 'By'} {story.data.author} <span>{date}</span></p></header>
-    {story.data.image ? <figure><img src={story.data.image} alt={story.data.imageAlt ?? ''} /><figcaption>{story.data.imageCredit}</figcaption></figure> : <div class="article-placeholder" aria-hidden="true"></div>}
+    {story.data.image ? <figure class="article-hero"><img src={story.data.image} alt={story.data.imageAlt ?? ''} style={story.data.imagePosition ? `object-position: ${story.data.imagePosition}` : undefined} /><figcaption>{story.data.imageCredit}</figcaption></figure> : <div class="article-placeholder" aria-hidden="true"></div>}
     <div class="prose"><Content /></div>
   </article>
 </BaseLayout>

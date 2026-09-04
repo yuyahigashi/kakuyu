@@ -15,6 +15,8 @@ const stories = defineCollection({
     image: z.string().optional(),
     imageAlt: z.string().optional(),
     imageCredit: z.string().optional(),
+    imagePosition: z.string().optional(),
+    layout: z.enum(['standard', 'feature']).default('standard'),
     language: z.enum(['ja', 'en']).default('ja'),
   }),
 });

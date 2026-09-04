@@ -10,7 +10,7 @@ const themes = ['War','Poverty','Solitude','Art','Craft','Memory','Place','Work'
 <BaseLayout language="en" alternateHref="/ja/" image={lead?.data.image}>
   <div class="issue-line"><span>Vol. 01 / Summer 2026</span><span>Rural Japan</span></div>
   {lead && <section class="lead" id="stories">
-    <a class="lead-image" href={`/stories/${lead.id}/`}>{lead.data.image ? <img src={lead.data.image} alt={lead.data.imageAlt ?? ''} /> : <span>Essay / Memory</span>}</a>
+    <a class="lead-image" href={`/stories/${lead.id}/`}>{lead.data.image ? <img src={lead.data.image} alt={lead.data.imageAlt ?? ''} style={lead.data.imagePosition ? `object-position: ${lead.data.imagePosition}` : undefined} /> : <span>Essay / Memory</span>}</a>
     <article><p class="kicker">{lead.data.section} / {lead.data.themes.join(' · ')}</p><h1><a href={`/stories/${lead.id}/`}>{lead.data.title}</a></h1><p class="dek">{lead.data.dek}</p><p class="byline">By {lead.data.author}</p><a class="read-more" href={`/stories/${lead.id}/`}>Read the story <span>→</span></a></article>
   </section>}
   <section class="manifesto"><p>Rural Japan—<br />a new vantage point.</p><p>By looking through the lens of a single place, we offer you a different way of seeing the world.</p></section>

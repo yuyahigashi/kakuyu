@@ -82,6 +82,39 @@ footer p { max-width: 620px; line-height: 1.8; }
 .prose { max-width: 720px; margin: auto; font-size: 19px; line-height: 2; }
 .prose p:first-child::first-letter { float: left; font-size: 72px; line-height: .8; padding: 10px 10px 0 0; }
 .prose h2 { font-size: 32px; margin-top: 2em; }
+
+/* Long-form feature treatment: generous rhythm, visual pauses, and compact context. */
+.article-page--feature { max-width: 1180px; }
+.article-page--feature > header { max-width: 980px; }
+.article-page--feature > header h1 { text-wrap: balance; }
+.article-page--feature .article-hero { background: var(--soft); border-block: 1px solid var(--rule); padding: 28px; }
+.article-page--feature .article-hero img { height: min(72vh, 820px); aspect-ratio: auto; object-fit: contain; }
+.article-page--feature .prose { max-width: 760px; }
+.article-page--feature .prose > p:first-child { font-size: 23px; line-height: 1.75; color: #353531; }
+.article-page--feature .prose h2 { border-top: 1px solid var(--ink); padding-top: 16px; margin-top: 2.7em; font-size: clamp(28px, 3.1vw, 40px); line-height: 1.18; letter-spacing: -.018em; }
+.article-page--feature .prose h2::before { content: "§"; display: block; margin-bottom: 14px; font: 11px Arial, sans-serif; color: var(--accent); }
+.article-page--feature .prose blockquote { width: min(900px, calc(100vw - 56px)); margin: 72px 50%; transform: translateX(-50%); padding: 36px clamp(24px, 5vw, 64px); border-block: 2px solid var(--ink); font-size: clamp(27px, 3.4vw, 44px); font-style: italic; line-height: 1.3; letter-spacing: -.02em; }
+.article-page--feature .prose blockquote p { margin: 0; }
+.article-page--feature .feature-figure { width: min(960px, calc(100vw - 56px)); margin: 58px 50%; transform: translateX(-50%); }
+.article-page--feature .feature-figure img { height: auto; max-height: 760px; aspect-ratio: auto; object-fit: contain; background: var(--soft); }
+.article-page--feature .feature-figure--object { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(220px, .55fr); align-items: end; gap: 26px; border-block: 1px solid var(--rule); padding: 28px 0; }
+.article-page--feature .feature-figure--object figcaption { text-align: left; font-size: 11px; line-height: 1.65; margin: 0; }
+.article-page--feature .feature-facts { width: min(960px, calc(100vw - 56px)); margin: 52px 50%; transform: translateX(-50%); display: grid; grid-template-columns: repeat(3, 1fr); border-block: 1px solid var(--ink); }
+.article-page--feature .feature-facts div { padding: 24px; border-right: 1px solid var(--rule); }
+.article-page--feature .feature-facts div:last-child { border-right: 0; }
+.article-page--feature .feature-facts strong { display: block; margin-bottom: 8px; font-size: 29px; font-weight: 500; line-height: 1; }
+.article-page--feature .feature-facts span { font: 10px/1.5 Arial, sans-serif; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); }
+.article-page--feature .feature-note { margin: 38px 0; padding: 22px 24px; border-left: 3px solid var(--accent); background: var(--soft); font-size: 16px; line-height: 1.75; }
+.article-page--feature .feature-note strong { display: block; margin-bottom: 6px; font: 700 10px Arial, sans-serif; letter-spacing: .13em; text-transform: uppercase; color: var(--accent); }
+.article-page--feature .feature-route { width: min(960px, calc(100vw - 56px)); margin: 48px 50% 70px; transform: translateX(-50%); display: grid; grid-template-columns: repeat(3, 1fr); padding: 0; list-style: none; counter-reset: route; }
+.article-page--feature .feature-route li { counter-increment: route; position: relative; padding: 22px 24px 22px 48px; border-top: 1px solid var(--ink); font: 12px/1.55 Arial, sans-serif; letter-spacing: .04em; }
+.article-page--feature .feature-route li::before { content: counter(route, decimal-leading-zero); position: absolute; left: 0; color: var(--accent); }
+.article-page--feature .feature-route li:not(:last-child)::after { content: "→"; position: absolute; right: -7px; top: 20px; z-index: 1; background: #fff; padding: 0 3px; }
+.article-page--feature .sources { margin-top: 80px; padding-top: 28px; border-top: 2px solid var(--ink); font-size: 14px; line-height: 1.7; }
+.article-page--feature .sources h2 { border: 0; padding: 0; font: 700 13px Arial, sans-serif; letter-spacing: .13em; text-transform: uppercase; }
+.article-page--feature .sources h2::before { display: none; }
+.article-page--feature .sources li { margin-bottom: 10px; }
+.article-page--feature .sources a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .simple-page { max-width: 850px; padding: 90px 0 140px; }
 .simple-page p:not(.kicker) { font-size: 21px; line-height: 2; }
 .archive-page { padding: 70px 0; }
@@ -109,5 +142,19 @@ footer p { max-width: 620px; line-height: 1.8; }
   .article-page { padding-top: 45px; }
   .article-page figure { margin: 35px 0; }
   .prose { font-size: 18px; padding: 0 5px; }
+  .article-page--feature .article-hero { padding: 12px; }
+  .article-page--feature .article-hero img { height: min(68vh, 640px); }
+  .article-page--feature .prose > p:first-child { font-size: 20px; }
+  .article-page--feature .prose blockquote { width: calc(100vw - 28px); margin-block: 52px; padding: 26px 18px; }
+  .article-page--feature .feature-figure,
+  .article-page--feature .feature-facts,
+  .article-page--feature .feature-route { width: calc(100vw - 28px); }
+  .article-page--feature .feature-figure--object { grid-template-columns: 1fr; padding: 16px 0; gap: 14px; }
+  .article-page--feature .feature-facts { grid-template-columns: 1fr; }
+  .article-page--feature .feature-facts div { border-right: 0; border-bottom: 1px solid var(--rule); padding: 18px 5px; }
+  .article-page--feature .feature-facts div:last-child { border-bottom: 0; }
+  .article-page--feature .feature-route { grid-template-columns: 1fr; }
+  .article-page--feature .feature-route li { padding-left: 42px; }
+  .article-page--feature .feature-route li:not(:last-child)::after { content: "↓"; right: auto; left: 14px; top: auto; bottom: -14px; }
   .simple-page { padding: 60px 5px 90px; }
 }
