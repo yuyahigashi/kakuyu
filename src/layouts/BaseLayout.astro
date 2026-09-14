@@ -2,8 +2,8 @@
 import '../styles/global.css';
 interface Props { title?: string; description?: string; language?: 'ja' | 'en'; alternateHref?: string; image?: string; type?: 'website' | 'article'; }
 const { title = 'KAKUYU', description = 'An independent review looking at the world through Japan.', language = 'en', alternateHref, image, type = 'website' } = Astro.props;
-const pageTitle = title === 'KAKUYU' ? 'KAKUYU — Independent Review from Japan' : `${title} — KAKUYU`;
 const isJapanese = language === 'ja';
+const pageTitle = title === 'KAKUYU' ? (isJapanese ? 'KAKUYU — 日本から届ける独立系メディア' : 'KAKUYU — Independent Review from Japan') : `${title} — KAKUYU`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const alternateURL = alternateHref ? new URL(alternateHref, Astro.site) : undefined;
 const socialImage = image ? new URL(image, Astro.site) : undefined;
@@ -33,16 +33,16 @@ const socialImage = image ? new URL(image, Astro.site) : undefined;
   </head>
   <body>
     <header class="site-header">
-      <div class="utility"><span>Independent review from Japan</span><div><a href="#newsletter">Newsletter</a><a href={alternateHref ?? (isJapanese ? '/' : '/ja/')} lang={isJapanese ? 'en' : 'ja'}>{isJapanese ? 'English' : '日本語'}</a></div></div>
+      <div class="utility"><span>{isJapanese ? '日本から届ける独立系メディア' : 'Independent review from Japan'}</span><div><a href="#newsletter">{isJapanese ? 'ニュースレター' : 'Newsletter'}</a><a href={alternateHref ?? (isJapanese ? '/' : '/ja/')} lang={isJapanese ? 'en' : 'ja'}>{isJapanese ? 'English' : '日本語'}</a></div></div>
       <a class="masthead" href={isJapanese ? '/ja/' : '/'}>KAKUYU</a>
       <nav aria-label={isJapanese ? '主要ナビゲーション' : 'Primary navigation'}>
-        <a href="/#stories">Stories</a><a href="/section/japan/">Japan</a><a href="/section/world/">World</a><a href="/section/arts/">Arts</a><a href="/section/notebook/">Notebook</a><a href="/#themes">Themes</a>
+        <a href={isJapanese ? '/ja/#stories' : '/#stories'}>{isJapanese ? '記事' : 'Stories'}</a><a href={isJapanese ? '/ja/section/japan/' : '/section/japan/'}>{isJapanese ? '日本' : 'Japan'}</a><a href={isJapanese ? '/ja/section/world/' : '/section/world/'}>{isJapanese ? '世界' : 'World'}</a><a href={isJapanese ? '/ja/section/arts/' : '/section/arts/'}>{isJapanese ? '芸術' : 'Arts'}</a><a href={isJapanese ? '/ja/section/notebook/' : '/section/notebook/'}>{isJapanese ? 'ノート' : 'Notebook'}</a><a href={isJapanese ? '/ja/#themes' : '/#themes'}>{isJapanese ? 'テーマ' : 'Themes'}</a>
       </nav>
     </header>
     <main><slot /></main>
     <footer>
       <div><strong>KAKUYU</strong><p>{isJapanese ? '日本をレンズに、戦争、貧困、孤独、芸術、工芸、記憶、場所、仕事、そして人間の条件を語る。' : 'Looking through Japan at war, poverty, solitude, art, craft, memory, place, work, and the human condition.'}</p></div>
-      <div class="footer-links"><a href={isJapanese ? '/ja/about/' : '/about/'}>{isJapanese ? 'KAKUYUについて' : 'About'}</a><a href="mailto:editor@example.com">Contact</a><a href="#newsletter">Newsletter</a></div>
+      <div class="footer-links"><a href={isJapanese ? '/ja/about/' : '/about/'}>{isJapanese ? 'KAKUYUについて' : 'About'}</a><a href="mailto:editor@example.com">{isJapanese ? 'お問い合わせ' : 'Contact'}</a><a href="#newsletter">{isJapanese ? 'ニュースレター' : 'Newsletter'}</a></div>
       <small>© {new Date().getFullYear()} KAKUYU</small>
     </footer>
   </body>

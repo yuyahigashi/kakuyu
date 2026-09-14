@@ -1,0 +1,12 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import StoryCard from '../../../components/StoryCard.astro';
+export function getStaticPaths() {
+  return ['Japan','World','Arts','Notebook'].map(section => ({ params: { section: section.toLowerCase() }, props: { section } }));
+}
+const { section } = Astro.props;
+const labels: Record<string, string> = { Japan: '日本', World: '世界', Arts: '芸術', Notebook: 'ノート' };
+const stories = (await getCollection('stories', ({ data }) => !data.draft && data.language === 'ja' && data.section === section)).sort((a,b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+---
+<BaseLayout title={labels[section]} language="ja"><section class="archive-page"><p class="kicker">カテゴリー</p><h1>{labels[section]}</h1><div class="story-grid">{stories.map((story,index) => <StoryCard story={story} index={index} language="ja" />)}</div></section></BaseLayout>

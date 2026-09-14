@@ -1,0 +1,13 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import StoryCard from '../../../components/StoryCard.astro';
+export async function getStaticPaths() {
+  const stories = await getCollection('stories', ({ data }) => !data.draft && data.language === 'ja');
+  const themes = [...new Set(stories.flatMap((story) => story.data.themes))];
+  return themes.map(theme => ({ params: { theme }, props: { theme } }));
+}
+const { theme } = Astro.props;
+const stories = (await getCollection('stories', ({ data }) => !data.draft && data.language === 'ja' && data.themes.includes(theme))).sort((a,b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+---
+<BaseLayout title={theme} language="ja"><section class="archive-page"><p class="kicker">テーマ</p><h1>{theme}</h1><div class="story-grid">{stories.map((story,index) => <StoryCard story={story} index={index} language="ja" />)}</div></section></BaseLayout>
