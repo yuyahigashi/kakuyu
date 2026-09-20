@@ -13,14 +13,20 @@ const absolute = (path: string) => new URL(path, SITE).href;
 
 export async function GET() {
   const stories = await getCollection('stories', ({ data }) => !data.draft);
-  const themes = [...new Set(stories.flatMap((story) => story.data.themes))];
+  const englishStories = stories.filter((story) => story.data.language === 'en');
+  const japaneseStories = stories.filter((story) => story.data.language === 'ja');
+  const englishThemes = [...new Set(englishStories.flatMap((story) => story.data.themes))];
+  const japaneseThemes = [...new Set(japaneseStories.flatMap((story) => story.data.themes))];
+  const sections = ['japan', 'world', 'arts', 'notebook'];
   const pages = [
     { path: '/', lastmod: undefined },
     { path: '/ja/', lastmod: undefined },
     { path: '/about/', lastmod: undefined },
     { path: '/ja/about/', lastmod: undefined },
-    ...['japan', 'world', 'arts', 'notebook'].map((section) => ({ path: `/section/${section}/`, lastmod: undefined })),
-    ...themes.map((theme) => ({ path: `/themes/${encodeURIComponent(theme)}/`, lastmod: undefined })),
+    ...sections.filter((section) => englishStories.some((story) => story.data.section.toLowerCase() === section)).map((section) => ({ path: `/section/${section}/`, lastmod: undefined })),
+    ...sections.filter((section) => japaneseStories.some((story) => story.data.section.toLowerCase() === section)).map((section) => ({ path: `/ja/section/${section}/`, lastmod: undefined })),
+    ...englishThemes.map((theme) => ({ path: `/themes/${encodeURIComponent(theme)}/`, lastmod: undefined })),
+    ...japaneseThemes.map((theme) => ({ path: `/ja/themes/${encodeURIComponent(theme)}/`, lastmod: undefined })),
     ...stories.map((story) => ({
       path: `/stories/${story.id}/`,
       lastmod: story.data.publishedAt.toISOString().slice(0, 10),

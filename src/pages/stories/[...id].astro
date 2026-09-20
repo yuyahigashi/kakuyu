@@ -16,10 +16,11 @@ const alternateId = story.id.endsWith('-en')
 const alternateHref = alternateId ? `/stories/${alternateId}/` : undefined;
 const date = new Intl.DateTimeFormat(isJapanese ? 'ja-JP' : 'en-US', { year:'numeric', month:'long', day:'numeric' }).format(story.data.publishedAt);
 const sectionLabels = { Stories: '記事', Japan: '日本', World: '世界', Arts: '芸術', Notebook: 'ノート' };
+const sectionHref = story.data.section === 'Stories' ? (isJapanese ? '/ja/#stories' : '/#stories') : `${isJapanese ? '/ja' : ''}/section/${story.data.section.toLowerCase()}/`;
 ---
-<BaseLayout title={story.data.title} description={story.data.dek} language={story.data.language} alternateHref={alternateHref} image={story.data.image} type="article">
+<BaseLayout title={story.data.title} description={story.data.dek} language={story.data.language} alternateHref={alternateHref} image={story.data.image} type="article" publishedAt={story.data.publishedAt} author={story.data.author}>
   <article class:list={['article-page', { 'article-page--feature': story.data.layout === 'feature' }]}>
-    <header><p class="kicker">{isJapanese ? sectionLabels[story.data.section] : story.data.section} / {story.data.themes.join(isJapanese ? '・' : ' · ')}</p><h1>{story.data.title}</h1><p class="dek">{story.data.dek}</p><p class="byline">{isJapanese ? '文' : 'By'} {story.data.author} <span>{date}</span></p></header>
+    <header><p class="kicker"><a href={sectionHref}>{isJapanese ? sectionLabels[story.data.section] : story.data.section}</a> / {story.data.themes.map((theme, index) => <><a href={`${isJapanese ? '/ja' : ''}/themes/${encodeURIComponent(theme)}/`}>{theme}</a>{index < story.data.themes.length - 1 ? (isJapanese ? '・' : ' · ') : ''}</>)}</p><h1>{story.data.title}</h1><p class="dek">{story.data.dek}</p><p class="byline">{isJapanese ? '文' : 'By'} {story.data.author} <span>{date}</span></p></header>
     {story.data.image ? <figure class="article-hero"><img src={story.data.image} alt={story.data.imageAlt ?? ''} style={story.data.imagePosition ? `object-position: ${story.data.imagePosition}` : undefined} /><figcaption>{story.data.imageCredit}</figcaption></figure> : <div class="article-placeholder" aria-hidden="true"></div>}
     <div class="prose"><Content /></div>
   </article>

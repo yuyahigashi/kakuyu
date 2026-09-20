@@ -1,12 +1,32 @@
 ---
 import '../styles/global.css';
-interface Props { title?: string; description?: string; language?: 'ja' | 'en'; alternateHref?: string; image?: string; type?: 'website' | 'article'; }
-const { title = 'KAKUYU', description = 'An independent review looking at the world through Japan.', language = 'en', alternateHref, image, type = 'website' } = Astro.props;
+interface Props { title?: string; description?: string; language?: 'ja' | 'en'; alternateHref?: string; image?: string; type?: 'website' | 'article'; publishedAt?: Date; author?: string; }
+const { title = 'KAKUYU', description = 'An independent review looking at the world through Japan.', language = 'en', alternateHref, image, type = 'website', publishedAt, author } = Astro.props;
 const isJapanese = language === 'ja';
 const pageTitle = title === 'KAKUYU' ? (isJapanese ? 'KAKUYU — 日本から届ける独立系メディア' : 'KAKUYU — Independent Review from Japan') : `${title} — KAKUYU`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const alternateURL = alternateHref ? new URL(alternateHref, Astro.site) : undefined;
 const socialImage = image ? new URL(image, Astro.site) : undefined;
+const structuredData = type === 'article' ? {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  inLanguage: language,
+  mainEntityOfPage: canonicalURL.href,
+  datePublished: publishedAt?.toISOString(),
+  author: { '@type': 'Organization', name: author ?? 'KAKUYU Editorial Team' },
+  publisher: { '@type': 'Organization', name: 'KAKUYU', url: 'https://kakuyu.com/' },
+  ...(socialImage ? { image: socialImage.href } : {}),
+} : {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'KAKUYU',
+  url: canonicalURL.href,
+  inLanguage: language,
+  description,
+};
+const structuredDataJSON = JSON.stringify(structuredData).replaceAll('<', '\\u003c');
 ---
 <!doctype html>
 <html lang={language}>
@@ -29,6 +49,7 @@ const socialImage = image ? new URL(image, Astro.site) : undefined;
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     {socialImage && <meta name="twitter:image" content={socialImage} />}
+    <script is:inline type="application/ld+json" set:html={structuredDataJSON} />
     <title>{pageTitle}</title>
   </head>
   <body>
