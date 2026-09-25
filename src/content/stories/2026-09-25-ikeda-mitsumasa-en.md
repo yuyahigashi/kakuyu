@@ -9,7 +9,7 @@ featured: false
 draft: false
 language: en
 layout: feature
-image: /images/stories/ikeda-mitsumasa/ikeda-mitsumasa-portrait.jpg
+image: /images/stories/ikeda-mitsumasa/ikeda-mitsumasa-wikipedia.jpg
 imageAlt: Portrait of Okayama lord Ikeda Mitsumasa seated in a green robe and formal kamishimo
 imageCredit: Portrait of Ikeda Mitsumasa by Ikeda Tsugumasa, Hayashibara Museum of Art. Wikimedia Commons, public domain. Resized for the web.
 imagePosition: center 60%
