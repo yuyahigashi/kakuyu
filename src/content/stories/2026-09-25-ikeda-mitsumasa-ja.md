@@ -9,7 +9,7 @@ featured: false
 draft: false
 language: ja
 layout: feature
-image: /images/stories/ikeda-mitsumasa/ikeda-mitsumasa-wikipedia.jpg
+image: /images/stories/ikeda-mitsumasa/ikeda-mitsumasa-selected.png
 imageAlt: 緑の小袖と裃姿で座る岡山藩主池田光政の肖像
 imageCredit: 池田継政筆「池田光政像」、林原美術館所蔵。Wikimedia Commons、パブリックドメイン。ウェブ用に縮小。
 imagePosition: center 60%
