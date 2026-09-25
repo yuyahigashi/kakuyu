@@ -10,9 +10,9 @@ draft: false
 language: ja
 layout: feature
 image: /images/stories/ikeda-mitsumasa/ikeda-mitsumasa-portrait.jpg
-imageAlt: 黒い装束で座る岡山藩主池田光政の肖像
-imageCredit: 池田光政像、作者不詳。Wikimedia Commons、パブリックドメイン。ウェブ用に縮小。
-imagePosition: center 70%
+imageAlt: 緑の小袖と裃姿で座る岡山藩主池田光政の肖像
+imageCredit: 池田継政筆「池田光政像」、林原美術館所蔵。Wikimedia Commons、パブリックドメイン。ウェブ用に縮小。
+imagePosition: center 60%
 ---
 
 池田光政は、江戸時代前期を代表する大名の一人である。
@@ -146,6 +146,6 @@ imagePosition: center 70%
     <li><a href="https://www.city.okayama.jp/shisei/0000018377.html">岡山市「津田永忠屋敷跡」</a></li>
     <li><a href="https://www.okayama-kanko.jp/spot/detail_101063.html">岡山県観光連盟「和意谷池田家墓所」</a></li>
     <li>『日本大百科全書』『世界大百科事典』「池田光政」項（JapanKnowledge。利用者提供資料を参照）</li>
-    <li>主画像：<a href="https://commons.wikimedia.org/wiki/File:%E6%B1%A0%E7%94%B0%E5%85%89%E6%94%BF.jpg">池田光政像</a>。作者不詳、Wikimedia Commons、パブリックドメイン。</li>
+    <li>主画像：<a href="https://commons.wikimedia.org/wiki/File:%E6%B1%A0%E7%94%B0%E5%85%89%E6%94%BF2.jpg">池田継政筆「池田光政像」</a>。林原美術館所蔵、Wikimedia Commons、パブリックドメイン。</li>
   </ul>
 </section>

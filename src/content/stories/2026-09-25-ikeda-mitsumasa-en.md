@@ -10,9 +10,9 @@ draft: false
 language: en
 layout: feature
 image: /images/stories/ikeda-mitsumasa/ikeda-mitsumasa-portrait.jpg
-imageAlt: Portrait of Okayama lord Ikeda Mitsumasa seated in formal black robes
-imageCredit: Portrait of Ikeda Mitsumasa, artist unknown. Wikimedia Commons, public domain. Resized for the web.
-imagePosition: center 70%
+imageAlt: Portrait of Okayama lord Ikeda Mitsumasa seated in a green robe and formal kamishimo
+imageCredit: Portrait of Ikeda Mitsumasa by Ikeda Tsugumasa, Hayashibara Museum of Art. Wikimedia Commons, public domain. Resized for the web.
+imagePosition: center 60%
 ---
 
 Ikeda Mitsumasa was one of the most prominent domain lords of early Edo-period Japan.
@@ -138,6 +138,6 @@ When Ikeda Mitsumasa made learning a form of government, education became an ins
     <li><a href="https://www.city.okayama.jp/shisei/0000018377.html">Okayama City, site of Tsuda Nagatada's residence</a></li>
     <li><a href="https://www.okayama-kanko.jp/spot/detail_101063.html">Okayama Tourism Federation, Waidani Ikeda family cemetery</a></li>
     <li>Entries on Ikeda Mitsumasa in <em>Encyclopedia Nipponica</em> and the <em>Heibonsha World Encyclopedia</em>, accessed through reference material supplied by the user.</li>
-    <li>Lead image: <a href="https://commons.wikimedia.org/wiki/File:%E6%B1%A0%E7%94%B0%E5%85%89%E6%94%BF.jpg">portrait of Ikeda Mitsumasa</a>. Artist unknown, Wikimedia Commons, public domain.</li>
+    <li>Lead image: <a href="https://commons.wikimedia.org/wiki/File:%E6%B1%A0%E7%94%B0%E5%85%89%E6%94%BF2.jpg">portrait of Ikeda Mitsumasa</a> by Ikeda Tsugumasa. Hayashibara Museum of Art, Wikimedia Commons, public domain.</li>
   </ul>
 </section>
