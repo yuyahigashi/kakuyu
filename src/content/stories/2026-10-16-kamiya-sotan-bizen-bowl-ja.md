@@ -9,10 +9,10 @@ featured: false
 draft: false
 language: ja
 layout: feature
-image: /images/stories/what-is-bizen-ware/bizen-momoyama-dish.webp
-imageAlt: 桃山時代の備前焼の皿。日記に記された備前鉢とは別の参考作品
-imageCredit: 桃山時代の備前焼の皿、箱根美術館。撮影：Daderot／ウィキメディア・コモンズ、CC0 1.0。縮小使用。宗湛所用や日記の備前鉢と確認された作品ではありません。
-imagePosition: center 50%
+image: /images/stories/kamiya-sotan/kamiya-sotan-portrait.png
+imageAlt: 広寿法雲の賛が記された神谷宗湛の肖像
+imageCredit: 神谷宗湛画像（広寿法雲賛）。読者提供画像。対応する図版：ウィキメディア・コモンズ「Kamiya Sōdan.jpg」、パブリックドメイン。
+imagePosition: center 75%
 ---
 
 備前焼は、いまもつくられ、使われ続ける日本の伝統工芸である。その歴史をたどる手がかりは、残された器や窯跡だけではない。人が器をどう使ったのかを書き留めた、短い言葉のなかにもある。
@@ -80,4 +80,4 @@ imagePosition: center 50%
 - 基礎資料：読者提供の小学館『日本国語大辞典』「備前鉢」「鉢」および『日本大百科全書』「宗湛日記」（小林保夫）、「神谷宗湛」（村井益男）の抜粋。本文は独自に構成した。
 - 1594年の引用は、上記辞典に掲載された用例に基づく。日記の原本画像との照合は行っていない。現代語訳と解釈は本記事による。
 - 補足資料：本文中の福岡市博物館、三重県立美術館の解説。ウェブ資料確認日：2026年10月16日。
-- 冒頭写真：箱根美術館の桃山時代の備前焼の皿。撮影Daderot、[ウィキメディア・コモンズ](https://commons.wikimedia.org/wiki/File:Dish,_Bizen_ware,_Momoyama_period,_1500s_AD,_ceramic_-_Hakone_Museum_of_Art_-_Hakone,_Kanagawa,_Japan_-_DSC08263.jpg)、[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)。ウェブ用に縮小。同時代の備前焼を示す参考写真であり、日記の鉢や宗湛所用の品と確認された作品ではない。
+- 肖像画像：読者提供の神谷宗湛画像（広寿法雲賛）。対応する[ウィキメディア・コモンズの図版](https://commons.wikimedia.org/wiki/File:Kamiya_S%C5%8Ddan.jpg)は1868年以前の作品とされ、[パブリックドメイン](https://creativecommons.org/publicdomain/mark/1.0/)として公開されている。添付画像を使用し、一覧表示では人物が見える位置に表示範囲を調整した。

@@ -9,10 +9,10 @@ featured: false
 draft: false
 language: en
 layout: feature
-image: /images/stories/what-is-bizen-ware/bizen-momoyama-dish.webp
-imageAlt: A Momoyama-period Bizen dish used as a historical illustration, not the bowl recorded in Sōtan's diary
-imageCredit: Momoyama-period Bizen dish, Hakone Museum of Art. Photo by Daderot, Wikimedia Commons, CC0 1.0. Resized. Not identified as the diary's bowl or as a vessel owned by Sōtan.
-imagePosition: center 50%
+image: /images/stories/kamiya-sotan/kamiya-sotan-portrait.png
+imageAlt: Portrait of Kamiya Sōtan with a calligraphic inscription above the seated figure
+imageCredit: Portrait of Kamiya Sōtan. Reader-supplied image; corresponding artwork on Wikimedia Commons as Kamiya Sōdan.jpg, public domain.
+imagePosition: center 75%
 ---
 
 Bizen pottery remains a living Japanese craft. Its history survives not only in vessels and kiln sites, but also in words describing how people used it.
@@ -80,4 +80,4 @@ This article has not identified the actual bowl in the entry. Nevertheless, the 
 - Core material: reader-supplied excerpts from Shogakukan's *Nihon Kokugo Daijiten*, entries on Bizen bowls and bowls, and *Nihon Daihyakka Zensho*, entries on the Sōtan diary by Yasuo Kobayashi and Kamiya Sōtan by Masuo Murai. This article's structure and wording are original.
 - The 1594 passage is quoted through the dictionary's example, not independently transcribed from a manuscript image. Its English translation and the accompanying interpretation are ours.
 - Supplementary sources: the Fukuoka City Museum and Mie Prefectural Art Museum pages linked above, checked October 16, 2026.
-- Opening photograph: Momoyama-period Bizen dish at the Hakone Museum of Art, photographed by Daderot. [Wikimedia Commons source](https://commons.wikimedia.org/wiki/File:Dish,_Bizen_ware,_Momoyama_period,_1500s_AD,_ceramic_-_Hakone_Museum_of_Art_-_Hakone,_Kanagawa,_Japan_-_DSC08263.jpg), [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Resized for web display. It illustrates pottery of the period; it is not identified as the diary's bowl or a possession of Sōtan.
+- Portrait: reader-supplied image of Kamiya Sōtan. The corresponding [Wikimedia Commons artwork](https://commons.wikimedia.org/wiki/File:Kamiya_S%C5%8Ddan.jpg) is dated before 1868 and marked [public domain](https://creativecommons.org/publicdomain/mark/1.0/). The supplied image is used; thumbnail framing is positioned to keep the figure visible.
